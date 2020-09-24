@@ -3,27 +3,27 @@ var mongoose = require('mongoose')
 
 var engineSchema = Schema({
     oil: {
-      level: { type: Boolean },
+      level: { type: String },
       comment: { type: String }
     },
     radiator: { 
-      fluid: { type: Boolean},
+      fluid: { type: String},
       comment: { type: String }
     },
     clutch: { 
-        brake_fluid: { type: Boolean },
+        brake_fluid: { type: String },
         comment: { type: String }
         },
     fan_belt: { 
-        tightness: { type: Boolean },
+        tightness: { type: String },
         comment: { type: String }
     },
     exhaust_pipe: { 
-        condition: { type: Boolean },
+        condition: { type: String },
         comment: { type: String }
     },
     fuel_tank_cap: { 
-        leaks: { type: Boolean },
+        leaks: { type: String },
         comment: { type: String }
     }
 
@@ -31,6 +31,5 @@ var engineSchema = Schema({
 });
 
 
-
-
 module.exports = Engine = mongoose.model('Engine', engineSchema);
+
