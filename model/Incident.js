@@ -6,8 +6,7 @@ var incidentSchema = Schema({
 registration:String,
 incident_type:String,
 comments:String,
-timestamps:true,
-date:Date,
+date:{ type: Date, default: Date.now },
 location: String
 
 });

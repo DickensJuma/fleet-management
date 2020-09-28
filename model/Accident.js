@@ -6,8 +6,7 @@ var accidentSchema = Schema({
  registration:String,
 extend_of_damage:String,
  comments:String,
- timestamps:true,
- date:Date,
+ date:{ type: Date, default: Date.now },
  location: String
   
 });

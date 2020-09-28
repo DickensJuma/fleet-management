@@ -2,33 +2,42 @@ var express = require('express');
 var router = express.Router();
 
 
-const { Start } = require('../model/Start');
+ var Start = require('../model/Start');
 
- 
-router.post('/', async (req, res) => {
-    // First Validate The Request
-    const { error } = validate(req.body);
-    if (error) {
-        return res.status(400).send(error.details[0].message);
-    }
- 
-    // Check if this start already exisits
-    let start = await Start.findOne({ registration: req.body.registration });
-    if (start) {
-        return res.status(400).send('That registration already exisits!');
-    } else {
+
+
+
+router.post('/',(req, res, next ) => {
+
+    Start.findOne({ registration: req.body.registration }).then(
+        (data) => {
+          if (data) {
+            return res.status(401).send({
+              error: 'Registration  found'
+            });
+       
+          }
+   
         // Insert the new start if they do not exist yet
-        start = new start({
+       var start = new Start({
             
             registration: req.body.registration,
             current_odometer_reading: req.body.current_odometer_reading,
             date:req.body.date,
-            location:req.body.location
+            location:req.body.location,
+            name:req.body.name,
+            phone:req.body.phone,
+            starting_point:req.body.starting_point
          
         });
-        await start.save();
-        res.send(start);
-    }
+     
+    start.save(function (err, post) {
+        if (err) {
+          return next(err);
+        }
+        res.json(201, post);
+      });
+    });
 });
  
 module.exports = router;

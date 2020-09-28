@@ -9,13 +9,10 @@ registration:String,
 fuel_station:String,
 cost:Number,
 linter:String,
-timestamps:true,
-date:Date,
+date:{ type: Date, default: Date.now },
 location: String
 
 });
-
-
 
 
 

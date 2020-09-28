@@ -9,14 +9,10 @@ var servicingSchema = Schema({
  garage:String,
  parts_needed:String,
  comments:String,
- timestamps:true,
- date:Date,
+ date:{ type: Date, default: Date.now },
  location: String
   
 });
-
-
-
 
 
 module.exports = Servicing = mongoose.model('Servicing', servicingSchema);
