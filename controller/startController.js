@@ -16,7 +16,7 @@ exports.saveStart = (req, res, next) =>{
         (data) => {
           if (data) {
             return res.status(401).send({
-              error: 'Registration  found'
+              error: 'Registration found'
             });
        
           }
@@ -28,8 +28,6 @@ exports.saveStart = (req, res, next) =>{
             current_odometer_reading: req.body.current_odometer_reading,
             date:req.body.date,
             location:req.body.location,
-            name:req.body.name,
-            phone:req.body.phone,
             starting_point:req.body.starting_point
          
         });
