@@ -44,9 +44,8 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 const port = 3000
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(process.env.PORT || port, () => {
+  console.log(`app listening at http://localhost:${port}`)
 })
 
 module.exports = app;
