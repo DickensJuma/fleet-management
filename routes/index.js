@@ -9,8 +9,10 @@ var electricalController = require("../controller/electricalController")
 var mirrorsController = require("../controller/mirrorsController")
 var incidentController = require("../controller/incidentController")
 var accidentController = require("../controller/accidentController")
+var startController = require("../controller/startController")
 
-
+// POST Start
+router.post('/start', startController.saveStart);
 
 // POST fueling
 router.post('/fueling', fuelingController.saveFueling);
@@ -30,6 +32,15 @@ router.post("/accident", accidentController.saveAccident);
 router.post("/engine-check", engineController.saveEngine);
 
 router.post("/electrical-check", electricalController.saveElectrical);
+
+
+// GET start check
+
+router.get("/start", startController.getAllStart,
+ (req, res, next) => {
+  console.log(req.data);
+  res.send(req.data);
+});
 
 // GET fueling check
 
