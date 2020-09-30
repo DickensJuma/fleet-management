@@ -43,8 +43,8 @@ app.use(cookieParser());
 
 
 app.use('/', indexRouter);
-const port = 3000
-app.listen(process.env.PORT || port, () => {
+
+app.listen(process.env.PORT || 3000, () => {
   console.log(`app listening at http://localhost:${port}`)
 })
 
