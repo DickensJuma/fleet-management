@@ -34,6 +34,10 @@ router.post("/engine-check", engineController.saveEngine);
 router.post("/electrical-check", electricalController.saveElectrical);
 
 
+router.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 // GET start check
 
 router.get("/start", startController.getAllStart,
