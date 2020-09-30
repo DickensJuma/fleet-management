@@ -32,12 +32,15 @@ exports.saveStart = (req, res, next) =>{
          
         });
      
-    start.save(function (err, post) {
+    start.save(function (err, data) {
         if (err) {
           return next(err);
         }
-        res.json(201, post);
+        res.json(201, data);
+        console.log(data)
       });
     });
 };
- 
+
+
+
