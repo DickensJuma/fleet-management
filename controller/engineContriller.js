@@ -12,6 +12,7 @@ exports.getAllEngine = (req, res, next) => {
 exports.saveEngine = (req, res, next) => {
  
     let newEngine = new Engine({
+      registration: req.body.registration,
 
       fan_belt: { 
         tightness: req.body.tightness,

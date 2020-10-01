@@ -13,6 +13,8 @@ exports.getAllMirrors = (req, res, next) => {
 
 exports.saveMirrors = (req, res) => {
   let newMirror = new Mirrors({
+
+    registration: req.body.registration,
     windscreen: {
       condition: req.body.condition,
       comment: req.body.comment,

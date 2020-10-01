@@ -11,6 +11,9 @@ exports.getAllIncident = (req, res, next) => {
 };
 
 
+
+
+
 exports.saveIncident = (req, res, next) =>  {
   var incident = new Incident({
     incident_type: req.body.incident_type,

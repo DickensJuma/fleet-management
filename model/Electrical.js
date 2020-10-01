@@ -3,22 +3,13 @@ var mongoose = require('mongoose')
 
 
 var electricalSchema = Schema({
-  headlights: {
-    condition: { type: String },
-    comment: { type: String }
-  },
-  sidelights: { 
-    condition: { type: String},
-    comment: { type: String }
-  },
-  indicator: { 
-      brake_light: { type: String },
-      comment: { type: String }
-      },
-  number_plate: { 
-      reverse_light: { type: String },
-      comment: { type: String }
-  }
+  headlights: String,
+  sidelights: String,
+  indicator: String,
+  brake_light: String,
+  number_plate: String,
+  comment: String
+  
 
 
 });

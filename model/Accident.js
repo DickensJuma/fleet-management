@@ -14,6 +14,5 @@ extend_of_damage:String,
 
 
 
-
 module.exports = Accident = mongoose.model('Accident', accidentSchema);
 

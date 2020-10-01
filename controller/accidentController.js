@@ -26,14 +26,13 @@ exports.saveAccident = (req, res, next) => {
     var accident = new Accident({
       registration: req.body.registration,
       extend_of_damage: req.body.extend_of_damage,
-      comments: req.body.comment,
+      comments: req.body.comments,
       date: req.body.date,
       location: req.body.location,
     });
   
   
-  
-   
+    
   
     accident.save(function (err, post) {
       if (err) {
