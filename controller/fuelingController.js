@@ -17,6 +17,7 @@ exports.saveFueling = (req, res, next) => {
     registration: req.body.registration,
     date: req.body.date,
     location: req.body.location,
+
   });
   fueling.save(function (err, post) {
     if (err) {

@@ -3,18 +3,11 @@ var mongoose = require('mongoose')
 
 
 var mirrorsSchema = Schema({
-    windscreen: {
-    condition: { type: String },
-    comment: { type: String }
-  },
-  sidemirrors: { 
-    condition: { type: String},
-    comment: { type: String }
-  },
-  rear_view_mirrors: { 
-      condition: { type: String },
-      comment: { type: String }
-    }
+  registration:String,
+    windscreen:String,
+  sidemirrors: String,
+  rear_view_mirrors:String,
+  comment:String
 
 });
 

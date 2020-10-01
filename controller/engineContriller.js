@@ -13,19 +13,13 @@ exports.saveEngine = (req, res, next) => {
  
     let newEngine = new Engine({
       registration: req.body.registration,
-
-      fan_belt: { 
-        tightness: req.body.tightness,
-        comment: req.body.comment
-    },
-    exhaust_pipe: { 
-        condition: req.body.condition,
-        comment: req.body.comment
-    },
-    fuel_tank_cap: { 
-        leaks: req.body.leaks,
-        comment: req.body.comment
-    }
+      oil_level:req.body.oil_level,
+      radiator_fluid:req.body.radiator_fluid,
+      clutch_brake_fluid: req.body.clutch_brake_fluid,
+      fan_belt_tightness: req.body.fan_belt_tightness,
+      exhaust_pipe:req.body,exhaust_pipe,
+      fueltank_cap_leaks: req.body.fueltank_cap_leaks,
+      comment: req.body.comment
     });
     newEngine
       .save()

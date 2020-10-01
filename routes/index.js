@@ -12,11 +12,15 @@ var accidentController = require("../controller/accidentController")
 var startController = require("../controller/startController")
 var registerController = require("../controller/registerController")
 
-// POST Start
+// POST Register
 router.post('/register', registerController.saveRegister);
 
 // POST Start
 router.post('/start', startController.saveStart);
+
+// POST Mirrors
+router.post('/mirrors', mirrorsController.saveMirrors);
+
 
 // POST fueling
 router.post('/fueling', fuelingController.saveFueling);

@@ -15,18 +15,10 @@ exports.saveMirrors = (req, res) => {
   let newMirror = new Mirrors({
 
     registration: req.body.registration,
-    windscreen: {
-      condition: req.body.condition,
-      comment: req.body.comment,
-    },
-    sidemirrors: {
-      condition: req.body.condition,
-      comment: req.body.comment,
-    },
-    rear_view_mirrors: {
-      condition: req.body.condition,
-      comment: req.body.comment,
-    },
+    windscreen: req.body.windscreen,
+    sidemirrors:req.body.sidemirrors,
+    rear_view_mirrors:req.body.rear_view_mirrors,
+    comment:req.body.comment
     // windscreen: {
     //   condition: 'good',
     //   comment: 'good condition'
