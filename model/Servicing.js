@@ -5,7 +5,7 @@
 var servicingSchema = Schema({
  registration:String,
  current_odometer_reading:Number,
- service_due_date: Date,
+ service_due_date: { type: Date, default: Date.now },
  garage:String,
  parts_needed:String,
  comments:String,
