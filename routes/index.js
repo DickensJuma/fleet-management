@@ -11,12 +11,16 @@ var incidentController = require("../controller/incidentController")
 var accidentController = require("../controller/accidentController")
 var startController = require("../controller/startController")
 var registerController = require("../controller/registerController")
+var endController = require("../controller/endController")
 
 // POST Register
 router.post('/register', registerController.saveRegister);
 
 // POST Start
 router.post('/start', startController.saveStart);
+
+// POST End
+router.post('/end', endController.saveEnd);
 
 // POST Mirrors
 router.post('/mirrors', mirrorsController.saveMirrors);
@@ -43,12 +47,19 @@ router.post("/electrical-check", electricalController.saveElectrical);
 
 
 router.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello Driver!')
 })
 
 // GET register check
 
 router.get("/register", registerController.getAllRegister,
+ (req, res, next) => {
+  console.log(req.data);
+  res.send(req.data);
+});
+
+// GET ended trips
+router.get("/end", endController.getAllEnd,
  (req, res, next) => {
   console.log(req.data);
   res.send(req.data);

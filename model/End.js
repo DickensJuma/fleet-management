@@ -6,6 +6,7 @@ var EndSchema = Schema({
   registration: String,
   current_odometer_reading: Number,
   date:{ type: Date, default: Date.now },
+  ending_point:{type:String},
   location:{type: String},
  
   
