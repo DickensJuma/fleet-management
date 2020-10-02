@@ -15,12 +15,12 @@ exports.saveServicing = (req, res, next) =>{
   var servicing = new Servicing({
     registration: req.body.registration,
     current_odometer_reading: req.body.current_odometer_reading,
-    service_due_date: Date,
+    service_due_date: req.body.service_due_date,
     garage: req.body.garage,
     parts_needed: req.body.parts_needed,
     comments: req.body.comment,
     date: req.body.date,
-    location: req.body.location,
+    location: JSON.stringify(req.body.location),
   });
   servicing.save(function (err, post) {
     if (err) {
