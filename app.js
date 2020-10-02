@@ -21,7 +21,7 @@ app.use(cors())
 var mongoose = require('mongoose');
 
 //Set up default mongoose connection
-var mongoDB = 'mongodb+srv://dickens:0704868023dj@cluster0-yeyah.mongodb.net/test';
+var mongoDB = 'MONGO_URI';
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true  });
 
 //Get the default connection
